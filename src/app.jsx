@@ -1,8 +1,13 @@
 import './app.css';
+import NavBar from './components/navBar';
+import Video from './components/video';
 
 function App() {
   return (
-    <h1>hi</h1>
+    <>
+      <NavBar></NavBar>
+      <Video></Video>
+    </>
   );
 }
 
