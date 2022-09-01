@@ -5,10 +5,10 @@ import Profile from './profile';
 export default class NavBar extends Component {
   render() {
     return (
-      <nav>
+      <nav className="navBar">
         <div className="logo-container">
-          <img src="images/logo.png" alt="logo" />
-          <h1>Youtube</h1>
+          <img className="logo" src="images/logo.png" alt="logo" />
+          <h1 className="title">Youtube</h1>
         </div>
         <SearchForm></SearchForm>
         <Profile></Profile>

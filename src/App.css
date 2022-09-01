@@ -1,38 +1,207 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  color: #ffffff;
+  background-color: #161616;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+input {
+  border: 0;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2d2d2d;
+  padding: 0.5em 2em 0.5em 2em;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: 3em;
+}
+
+.logo {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+.title {
+  font-size: 1.8em;
+  letter-spacing: -0.04em;
+  margin-left: 0.2em;
+  color: #ffffff;
+}
+
+/* seachForm */
+.searchForm {
+  display: flex;
+
+  align-items: center;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 0.2em;
+}
+
+.searchInput {
+  width: 23.06em;
+  height: 3em;
+  font-size: 1em;
+  padding: 0.13em 0.38em;
+  background-color: transparent;
+}
+
+.searchBtn {
+  font-size: 1.6em;
+  color: #a1a1a1;
+  background-color: transparent;
+  margin-right: 0.47em;
+}
+
+/* profile */
+.profile-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* switch slider */
+.switch {
+  position: relative;
+  display: block;
+  width: 4.3em;
+  height: 1.8em;
+  background-color: #ffffff;
+  border-radius: 2.13em;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#checkbox {
+  display: none;
+}
+
+.slider {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switch .slider.round {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0.18em;
+  border-radius: 50%;
+  background-color: #28292c;
+  cursor: pointer;
+}
+
+#checkbox:checked ~ .switch {
+  background-color: #3a3b3c;
+}
+
+#checkbox:checked ~ .switch .slider.round {
+  background-color: #ffffff;
+  transition: all 0.4s ease-in-out;
+  transform: translateX(160%);
+}
+
+.alram {
+  background-color: transparent;
+  margin-left: 1.4em;
+}
+.fa-bell {
+  font-size: 2.1em;
+  color: #ffffff;
+}
+
+.profile-name {
+  width: 2.5em;
+  height: 2.5em;
+  margin-left: 1.4em;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: #6ab258;
+}
+
+/* video */
+.video-container {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+  padding: 1.88em 1.63em;
+}
+
+.video-content {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.content-items {
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.video {
+  width: 19.44em;
+  height: 10.94em;
+  background-color: #fff;
+  margin-bottom: 0.81em;
+}
+
+.item-details {
+  display: flex;
+  align-items: flex-start;
+  text-overflow: ellipsis;
+}
+
+.thumbnail {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  margin-top: 0.31em;
+  margin-right: 0.75em;
+}
+
+.content-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-title {
+  font-size: 1.12rem;
+}
+
+.channer-name {
+  font-size: 0.8rem;
+}
+
+.meta-data {
+  font-size: 0.8rem;
 }
