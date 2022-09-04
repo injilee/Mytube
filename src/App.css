@@ -1,5 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
 
+:root {
+  --white-color: #fff;
+  --black-color: #000;
+  --font-color: #000;
+  --background-color: #eee;
+  --nav-color: #fff;
+  --bell-color: #3a3b3c;
+  --search-icon-color: #a1a1a1;
+  --thumbnail-color: #f9f9f9;
+  --switch-background-color: #3a3b3c;
+  --switch-round-color: #fff;
+}
+
+/* light Mode */
+[data-theme='light'] {
+  --font-color: #000;
+  --background-color: #eee;
+  --nav-color: #fff;
+  --bell-color: #3a3b3c;
+  --thumbnail-color: #f9f9f9;
+  --switch-background-color: #3a3b3c;
+  --switch-round-color: #fff;
+}
+
+/* dark Mode */
+[data-theme='dark'] {
+  --font-color: #fff;
+  --background-color: #333;
+  --nav-color: #2d2d2d;
+  --bell-color: #fff;
+  --thumbnail-color: #eee;
+  --switch-background-color: #fff;
+  --switch-round-color: #28292c;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -8,12 +43,11 @@
 }
 
 body {
-  color: #ffffff;
-  background-color: #161616;
+  color: var(--font-color);
+  background-color: var(--background-color);
 }
 
 button {
-  outline: 0;
   border: 0;
   cursor: pointer;
   font-family: 'Noto Sans KR', sans-serif;
@@ -27,7 +61,7 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2d2d2d;
+  background-color: var(--nav-color);
   padding: 0.5em 2em 0.5em 2em;
 }
 
@@ -39,33 +73,34 @@ input {
 
 .logo {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 3.13em;
+  height: 3.13em;
 }
 
 .title {
   font-size: 1.8em;
   letter-spacing: -0.04em;
   margin-left: 0.2em;
-  color: #ffffff;
+  color: var(--font-color);
 }
 
 /* seachForm */
 .searchForm {
   display: flex;
-
   align-items: center;
 }
 
 .search-container {
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--white-color);
+  border: 1px solid #eee;
   border-radius: 0.2em;
+  box-shadow: rgb(225, 225, 225) 1px 1px 2px;
 }
 
 .searchInput {
-  width: 23.06em;
+  width: 20.5em;
   height: 3em;
   font-size: 1em;
   padding: 0.13em 0.38em;
@@ -74,16 +109,9 @@ input {
 
 .searchBtn {
   font-size: 1.6em;
-  color: #a1a1a1;
+  color: var(--search-icon-color);
   background-color: transparent;
-  margin-right: 0.47em;
-}
-
-/* profile */
-.profile-container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  margin: 0 0.47em;
 }
 
 /* switch slider */
@@ -91,8 +119,9 @@ input {
   position: relative;
   display: block;
   width: 4.3em;
-  height: 1.8em;
-  background-color: #ffffff;
+  height: 1.85em;
+  margin: 0 0.94em;
+  background-color: var(--switch-background-color);
   border-radius: 2.13em;
   cursor: pointer;
   -webkit-transition: 0.4s;
@@ -116,18 +145,25 @@ input {
   height: 1.5em;
   margin: 0.18em;
   border-radius: 50%;
-  background-color: #28292c;
+  background-color: var(--switch-round-color);
   cursor: pointer;
 }
 
 #checkbox:checked ~ .switch {
-  background-color: #3a3b3c;
+  background-color: #fff;
 }
 
 #checkbox:checked ~ .switch .slider.round {
-  background-color: #ffffff;
+  background-color: #28292c;
   transition: all 0.4s ease-in-out;
   transform: translateX(160%);
+}
+
+/* profile */
+.profile-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .alram {
@@ -136,7 +172,7 @@ input {
 }
 .fa-bell {
   font-size: 2.1em;
-  color: #ffffff;
+  color: var(--bell-color);
 }
 
 .profile-name {
@@ -144,7 +180,7 @@ input {
   height: 2.5em;
   margin-left: 1.4em;
   border-radius: 50%;
-  color: #ffffff;
+  color: var(--white-color);
   background-color: #6ab258;
 }
 
@@ -168,10 +204,10 @@ input {
   flex-direction: column;
 }
 
-.video {
+.thumbnail {
   width: 19.44em;
   height: 10.94em;
-  background-color: #fff;
+  background-color: var(--thumbnail-color);
   margin-bottom: 0.81em;
 }
 
@@ -181,7 +217,7 @@ input {
   text-overflow: ellipsis;
 }
 
-.thumbnail {
+.channel {
   width: 2.5em;
   height: 2.5em;
   border-radius: 50%;
@@ -204,4 +240,170 @@ input {
 
 .meta-data {
   font-size: 0.8rem;
+}
+
+/* Mediaquery */
+@media screen and (max-width: 768px) {
+  .navBar {
+    padding: 0.5em 1.88em;
+  }
+
+  .logo-container {
+    margin-right: 5em;
+  }
+
+  .logo {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  .title {
+    font-size: 1.44em;
+  }
+
+  /* seachForm */
+  .searchForm {
+    flex: 1;
+    justify-content: flex-end;
+  }
+  .search-container {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .searchInput {
+    display: none;
+    padding: 0.13em 0.38em;
+  }
+
+  .searchBtn {
+    font-size: 1.6em;
+    margin-right: 0.47em;
+  }
+
+  /* switch slider */
+  .switch {
+    width: 4.2em;
+    height: 1.75em;
+  }
+
+  .switch .slider.round {
+    width: 1.48em;
+    height: 1.48em;
+    margin: 0.15em;
+  }
+
+  /* profile */
+  .alram {
+    margin-left: 0.94em;
+  }
+  .fa-bell {
+    font-size: 1.75em;
+  }
+
+  .profile-name {
+    width: 2.19em;
+    height: 2.19em;
+    margin-left: 1.2em;
+  }
+
+  /* video */
+  .video-container {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .thumbnail {
+    width: 18.13em;
+    height: 10em;
+    margin-bottom: 0.68em;
+  }
+
+  .channel {
+    width: 2.19em;
+    height: 2.19em;
+    margin-right: 0.64em;
+  }
+
+  .video-title {
+    font-size: 1.08rem;
+  }
+
+  .channer-name {
+    font-size: 0.75rem;
+  }
+
+  .meta-data {
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 506px) {
+  .navBar {
+    padding: 0.75em 1.7em;
+  }
+
+  .logo {
+    width: 2em;
+    height: 2em;
+  }
+
+  .title {
+    font-size: 1.4em;
+  }
+
+  /* seachForm */
+  .searchInput {
+    padding: 0.13em 0.38em;
+  }
+
+  .searchBtn {
+    font-size: 1.3em;
+    margin-right: 0.4em;
+  }
+
+  /* switch slider */
+  .switch {
+    width: 4em;
+    height: 1.6em;
+  }
+
+  .switch .slider.round {
+    width: 1.35em;
+    height: 1.35em;
+    margin: 0.12em;
+  }
+
+  /* profile */
+  .video-container {
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5em;
+    padding: 1.7em 1.63em;
+  }
+
+  .thumbnail {
+    width: 18.13em;
+    height: 10em;
+    margin-bottom: 0.68em;
+  }
+
+  .channel {
+    width: 2.19em;
+    height: 2.19em;
+    margin-right: 0.64em;
+  }
+
+  .video-title {
+    font-size: 1rem;
+  }
+
+  .channer-name {
+    font-size: 0.7rem;
+  }
+
+  .meta-data {
+    font-size: 0.7rem;
+  }
 }

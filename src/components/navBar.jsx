@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SearchForm from './searchForm';
 import Profile from './profile';
 
-export default class NavBar extends Component {
+class NavBar extends Component {
   render() {
     return (
       <nav className="navBar">
@@ -16,3 +16,5 @@ export default class NavBar extends Component {
     );
   }
 }
+
+export default NavBar;

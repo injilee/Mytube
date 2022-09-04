@@ -7,12 +7,12 @@ export default class Video extends Component {
         <div className="video-container">
           <section className="video-content">
             <div className="content-items">
-              <div className="video"></div>
+              <div className="thumbnail"></div>
               <div className="item-details">
                 <img
-                  className="thumbnail"
+                  className="channel"
                   src="images/dreamcoding-thumbnail.jpg"
-                  alt="dreamcoding thumbnail"
+                  alt="dreamcoding channel"
                 />
                 <div className="content-detail">
                   <p className="video-title">
@@ -26,12 +26,12 @@ export default class Video extends Component {
           </section>
           <section className="video-content">
             <div className="content-items">
-              <div className="video"></div>
+              <div className="thumbnail"></div>
               <div className="item-details">
                 <img
-                  className="thumbnail"
+                  className="channel"
                   src="images/honeybeefather-thumbnail.jpg"
-                  alt="honeybeefather thumbnail"
+                  alt="honeybeefather channel"
                 />
                 <div className="content-detail">
                   <p className="video-title">
@@ -45,12 +45,12 @@ export default class Video extends Component {
           </section>
           <section className="video-content">
             <div className="content-items">
-              <div className="video"></div>
+              <div className="thumbnail"></div>
               <div className="item-details">
                 <img
-                  className="thumbnail"
+                  className="channel"
                   src="images/haejoo-thumbnail.jpg"
-                  alt="haejoo thumbnail"
+                  alt="haejoo channel"
                 />
                 <div className="content-detail">
                   <p className="video-title">[VLOG] 브이로그</p>
@@ -62,12 +62,12 @@ export default class Video extends Component {
           </section>
           <section className="video-content">
             <div className="content-items">
-              <div className="video"></div>
+              <div className="thumbnail"></div>
               <div className="item-details">
                 <img
-                  className="thumbnail"
+                  className="channel"
                   src="images/dreamcoding-thumbnail.jpg"
-                  alt="dreamcoding thumbnail"
+                  alt="dreamcoding channel"
                 />
                 <div className="content-detail">
                   <p className="video-title">
@@ -81,12 +81,12 @@ export default class Video extends Component {
           </section>
           <section className="video-content">
             <div className="content-items">
-              <div className="video"></div>
+              <div className="thumbnail"></div>
               <div className="item-details">
                 <img
-                  className="thumbnail"
+                  className="channel"
                   src="images/honeybeefather-thumbnail.jpg"
-                  alt="honeybeefather thumbnail"
+                  alt="honeybeefather channel"
                 />
                 <div className="content-detail">
                   <p className="video-title">
@@ -100,12 +100,12 @@ export default class Video extends Component {
           </section>
           <section className="video-content">
             <div className="content-items">
-              <div className="video"></div>
+              <div className="thumbnail"></div>
               <div className="item-details">
                 <img
-                  className="thumbnail"
+                  className="channel"
                   src="images/haejoo-thumbnail.jpg"
-                  alt="haejoo thumbnail"
+                  alt="haejoo channel"
                 />
                 <div className="content-detail">
                   <p className="video-title">[VLOG] 브이로그</p>
