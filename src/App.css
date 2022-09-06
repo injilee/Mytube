@@ -22,6 +22,7 @@
   --thumbnail-color: #f9f9f9;
   --switch-background-color: #3a3b3c;
   --switch-round-color: #fff;
+  --box-shadow: rgb(225, 225, 225) 1px 1px 2px;
 }
 
 /* dark Mode */
@@ -33,6 +34,7 @@
   --thumbnail-color: #eee;
   --switch-background-color: #fff;
   --switch-round-color: #28292c;
+  --box-shadow: none;
 }
 
 * {
@@ -96,7 +98,7 @@ input {
   background-color: var(--white-color);
   border: 1px solid #eee;
   border-radius: 0.2em;
-  box-shadow: rgb(225, 225, 225) 1px 1px 2px;
+  box-shadow: var(--box-shadow);
 }
 
 .searchInput {
