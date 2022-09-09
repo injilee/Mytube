@@ -19,7 +19,6 @@ const Profile = () => {
   const getUserTheme = () => (theme ? theme : preferDark);
 
   window.onload = function () {
-    console.log('loaded');
     if (getUserTheme === 'dark') {
       localStorage.setItem('theme', 'dark');
       document.documentElement.setAttribute('data-theme', 'dark');
