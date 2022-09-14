@@ -29,11 +29,14 @@ React Create App을 이용한 YouTube Clone Project 입니다.</br>
 - React
 - JavaScript
 - HTML / CSS
+- Postman
+- Youtube API
 
 ## 구현 기능
 
-- [x] 다크모드 지원
+- [x] 다크모드 지원.
 - [ ] 검색 기능
 - [ ] 인기 동영상 및 관련 동영상 목록
 - [ ] 유튜브 API
 - [x] 반응형 디자인
+- [x] .env 파일로 API Key 암호화
