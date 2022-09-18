@@ -5,7 +5,7 @@ import VideoList from './components/videoList';
 
 const App = () => {
   const apiKey = process.env.REACT_APP_API_KEY;
-  const videoUrl = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=KR&maxResults=4&key=${apiKey}`;
+  const videoUrl = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=KR&maxResults=8&key=${apiKey}`;
   const [videos, getVideos] = useState([]);
 
   useEffect(() => {

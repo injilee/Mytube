@@ -8,11 +8,13 @@ export default class VideoList extends Component {
 
   render() {
     return (
-      <div className="video-container">
-        {this.props.videoItem.map((items) => (
-          <Video key={items.id} videoItem={items}></Video>
-        ))}
-      </div>
+      <section className="video-list">
+        <ul className="video-content">
+          {this.props.videoItem.map((items) => (
+            <Video key={items.id} videoItem={items}></Video>
+          ))}
+        </ul>
+      </section>
     );
   }
 }
