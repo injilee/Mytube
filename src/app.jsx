@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './app.css';
-import NavBar from './components/navBar';
+import NavBar from './components/nav/navBar';
 import VideoList from './components/videoList';
 
 const App = () => {
