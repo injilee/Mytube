@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './app.css';
 import NavBar from './components/nav/navBar';
-import VideoList from './components/videoList';
+import VideoList from './components/video_list/videoList';
 
 const App = () => {
   const apiKey = process.env.REACT_APP_API_KEY;

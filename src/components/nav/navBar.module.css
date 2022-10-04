@@ -1,0 +1,51 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--nav-color);
+  padding: 0.5em 2em 0.5em 2em;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: inline-block;
+  width: 3.13em;
+  height: 3.13em;
+}
+
+.title {
+  font-size: 1.8em;
+  letter-spacing: -0.04em;
+  margin-left: 0.2em;
+  color: var(--font-color);
+}
+
+@media screen and (max-width: 768px) {
+  .navBar {
+    padding: 0.5em 1.88em;
+  }
+
+  .logoContainer {
+    margin-right: 5em;
+  }
+
+  .logo {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  .title {
+    font-size: 1.44em;
+  }
+}
+
+@media screen and (max-width: 506px) {
+  /* nav-bar */
+  .logoContainer {
+    margin-right: 0;
+  }
+}

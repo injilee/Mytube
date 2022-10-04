@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Video from './video';
+import Video from '../videos/video';
+import styles from './videoList.module.css';
 
 export default class VideoList extends Component {
   videoItem = (items) => {
@@ -8,8 +9,8 @@ export default class VideoList extends Component {
 
   render() {
     return (
-      <section className="video-list">
-        <ul className="video-content">
+      <section className={styles.videoList}>
+        <ul className={styles.videoContent}>
           {this.props.videoItem.map((items) => (
             <Video key={items.id} videoItem={items}></Video>
           ))}

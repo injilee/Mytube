@@ -1,0 +1,53 @@
+.contentItems {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.contentItems:hover {
+  opacity: 0.75;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+  background-color: var(--thumbnail-color);
+  margin-bottom: 0.9em;
+}
+
+.itemDetails {
+  display: flex;
+  align-items: flex-start;
+}
+
+.channel {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  margin-top: 0.31em;
+  margin-right: 0.75em;
+}
+
+.contentDetail {
+  display: flex;
+  flex-direction: column;
+}
+
+.videoTitle {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  font-size: 1.12rem;
+}
+
+.channerName {
+  font-size: 0.8rem;
+}
+
+.metaData {
+  font-size: 0.8rem;
+}
