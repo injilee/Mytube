@@ -19,9 +19,10 @@
 
 .title {
   font-size: 1.8em;
+  color: var(--font-color);
   letter-spacing: -0.04em;
   margin-left: 0.2em;
-  color: var(--font-color);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
