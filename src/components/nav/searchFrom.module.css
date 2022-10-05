@@ -1,8 +1,4 @@
 /* seachForm */
-.searchForm {
-  display: flex;
-  align-items: center;
-}
 
 .searchContainer {
   display: flex;
@@ -30,10 +26,7 @@
 
 @media screen and (max-width: 768px) {
   /* seachForm */
-  .searchForm {
-    flex: 1;
-    justify-content: flex-end;
-  }
+
   .searchContainer {
     background-color: transparent;
     border: none;
