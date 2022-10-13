@@ -3,16 +3,17 @@ import Video from '../videos/video';
 import styles from './videoList.module.css';
 
 export default class VideoList extends Component {
-  videoItem = (items) => {
-    this.props.videoItem(items);
-  };
-
   render() {
+    const { videoItem, onVideoClick } = this.props;
     return (
       <section className={styles.videoList}>
         <ul className={styles.videoContent}>
-          {this.props.videoItem.map((items) => (
-            <Video key={items.id} videoItem={items}></Video>
+          {videoItem.map((videos) => (
+            <Video
+              key={videos.id}
+              videoItem={videos}
+              onVideoClick={onVideoClick}
+            ></Video>
           ))}
         </ul>
       </section>

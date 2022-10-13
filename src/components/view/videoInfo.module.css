@@ -1,0 +1,98 @@
+.player {
+  background-color: var(--black-color);
+  margin-bottom: 1em;
+  object-fit: cover;
+}
+
+.info {
+  margin-bottom: 1.5em;
+}
+
+.videoInfo_hashtag {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--tag-hover-color);
+  margin-top: 0.7em;
+}
+
+.videoInfo_title {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 0.2em;
+}
+
+.view_count {
+  font-size: 0.8rem;
+  margin-right: 0.4em;
+  color: var(--text-secondary-color);
+}
+
+.view_count::after {
+  display: inline;
+  content: '•';
+  margin-left: 0.4em;
+}
+
+.upload {
+  font-size: 0.8rem;
+  color: var(--text-secondary-color);
+}
+
+.itemDetails {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+.channel {
+  width: 3.2em;
+  height: 3.2em;
+  border-radius: 50%;
+  margin-top: 0.31em;
+  margin-right: 0.75em;
+}
+
+.contentDetail {
+  display: flex;
+  align-items: center;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.channerName {
+  font-size: 1.1rem;
+}
+
+.owner {
+  font-size: 0.7rem;
+  font-weight: 300;
+  margin-top: 0.3em;
+}
+
+.btn {
+  display: flex;
+}
+
+.subscribe {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  color: var(--white-color);
+  background-color: var(--subscribe-color);
+  padding: 0.3em;
+}
+
+.line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--line-color);
+  margin-top: 1em;
+}
+
+/* @media screen and (max-width:768px){
+
+} */

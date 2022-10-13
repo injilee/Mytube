@@ -6,7 +6,11 @@ import ViewDetail from './components/view/viewDetail';
 
 const App = ({ youtube }) => {
   const [videos, getVideos] = useState([]);
-  // const [view, getViews] = useState([]);
+  const [video, selectView] = useState(null);
+
+  const selectVideo = (video) => {
+    selectView(video);
+  };
 
   const search = (query) => {
     youtube.search(query).then((items) => getVideos(items));
@@ -19,9 +23,9 @@ const App = ({ youtube }) => {
 
   return (
     <>
-      <NavBar onSearch={search}></NavBar>
-      {/* <VideoList videoItem={videos}></VideoList> */}
-      <ViewDetail onView={youtube}></ViewDetail>
+      <NavBar onSearch={search} />
+      {video && <ViewDetail video={video} />}
+      <VideoList videoItem={videos} onVideoClick={selectVideo} />
     </>
   );
 };
