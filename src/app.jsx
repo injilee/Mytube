@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './app.module.css';
+import Loading from './components/loading';
 import NavBar from './components/nav/navBar';
 import VideoList from './components/video_list/videoList';
 import ViewDetail from './components/view/viewDetail';
@@ -7,15 +8,18 @@ import ViewDetail from './components/view/viewDetail';
 const App = ({ youtube }) => {
   const [videos, getVideos] = useState([]);
   const [video, selectView] = useState(null);
+  const [loading, setLoading] = useState(null);
 
   const selectVideo = (video) => {
     selectView(video);
   };
 
   const search = (query) => {
+    selectVideo(null);
+    setLoading(true);
     youtube.search(query).then((items) => {
       getVideos(items);
-      selectVideo(null);
+      setLoading(false);
     });
   };
 
@@ -27,6 +31,7 @@ const App = ({ youtube }) => {
   return (
     <>
       <NavBar onSearch={search} />
+      {loading ? <Loading /> : ''}
       <section className={styles.content}>
         {video && (
           <div className={`${styles.viewDetail_container} ${styles.detail}`}>
