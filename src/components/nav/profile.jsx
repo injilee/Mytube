@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './profile.module.css';
 
 const Profile = () => {
   const setDark = () => {
@@ -33,23 +34,23 @@ const Profile = () => {
     }
   }
   return (
-    <div className="profile-container">
-      <div className="toggle-theme-wrapper">
+    <div className={styles.profile_container}>
+      <div className={styles.toggle_theme_wrapper}>
         <input
           type="checkbox"
           id="checkbox"
-          className="checkbox"
+          className={styles.checkbox}
           onChange={toggleTheme}
           defaultChecked={defaultDark}
         />
-        <label className="switch" htmlFor="checkbox">
-          <span className="slider round"></span>
+        <label className={styles.switch} htmlFor="checkbox">
+          <span className={`${styles.slider} ${styles.round}`}></span>
         </label>
       </div>
-      <button className="alram">
-        <i className="fa-solid fa-bell"></i>
+      <button className={styles.alram}>
+        <i className={`fa-solid fa-bell`}></i>
       </button>
-      <button className="profile-name">이</button>
+      <button className={styles.profile_name}>이</button>
     </div>
   );
 };

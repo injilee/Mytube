@@ -40,7 +40,7 @@
 
 .itemDetails {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   margin-bottom: 1.5em;
 }
 
@@ -54,12 +54,12 @@
 
 .contentDetail {
   display: flex;
-  align-items: center;
 }
 
 .meta {
   display: flex;
   flex-direction: column;
+  margin-bottom: 2.5em;
 }
 
 .channerName {
@@ -85,6 +85,17 @@
   padding: 0.3em;
 }
 
+.more {
+  margin-left: 63px;
+}
+
+.more_btn {
+}
+
+.description {
+  white-space: pre-wrap;
+}
+
 .line {
   display: block;
   width: 100%;
@@ -92,7 +103,3 @@
   background-color: var(--line-color);
   margin-top: 1em;
 }
-
-/* @media screen and (max-width:768px){
-
-} */

@@ -9,9 +9,9 @@ const VideoInfo = ({ videoDetail, videoDetail: { snippet } }) => {
           <iframe
             className={styles.player}
             width="100%"
-            height="300px"
+            height="400px"
             title="YoutubePlayer"
-            src={`https://www.youtube-nocookie.com/embed/${videoDetail.id}`}
+            src={`https://www.youtube-nocookie.com/embed/${videoDetail.id}?autoplay=1`}
             frameBorder="0"
             allowFullScreen
           ></iframe>
@@ -38,6 +38,10 @@ const VideoInfo = ({ videoDetail, videoDetail: { snippet } }) => {
               <p className={styles.channerName}>{snippet.channelTitle}</p>
               <span className={styles.owner}>구독자 42만명</span>
             </div>
+          </div>
+          <div className={styles.more}>
+            <button className={styles.mormore_btne}>더보기</button>
+            <pre className={styles.description}>{snippet.description}</pre>
           </div>
           {/* <div className={styles.btn}>
             <button className={styles.subscribe}>구독</button>

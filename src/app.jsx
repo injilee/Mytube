@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './app.css';
+import styles from './app.module.css';
 import NavBar from './components/nav/navBar';
 import VideoList from './components/video_list/videoList';
 import ViewDetail from './components/view/viewDetail';
@@ -24,8 +24,16 @@ const App = ({ youtube }) => {
   return (
     <>
       <NavBar onSearch={search} />
-      {video && <ViewDetail video={video} />}
-      <VideoList videoItem={videos} onVideoClick={selectVideo} />
+      <section className={styles.content}>
+        {video && (
+          <div className={`${styles.viewDetail_container} ${styles.detail}`}>
+            <ViewDetail video={video} />
+          </div>
+        )}
+        <div className={styles.list}>
+          <VideoList videoItem={videos} onVideoClick={selectVideo} />
+        </div>
+      </section>
     </>
   );
 };
