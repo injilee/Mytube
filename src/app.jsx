@@ -13,7 +13,10 @@ const App = ({ youtube }) => {
   };
 
   const search = (query) => {
-    youtube.search(query).then((items) => getVideos(items));
+    youtube.search(query).then((items) => {
+      getVideos(items);
+      selectVideo(null);
+    });
   };
 
   // 첫 화면에 보여지는 동영상 목록이기 때문에 mount 되자마자 받아옴.
