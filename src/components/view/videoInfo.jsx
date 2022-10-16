@@ -31,7 +31,7 @@ const VideoInfo = ({ videoDetail, videoDetail: { snippet } }) => {
           <div className={styles.contentDetail}>
             <img
               className={styles.channel}
-              src="images/dreamcoding-thumbnail.jpg"
+              src={`${snippet.channels}`}
               alt={`${snippet.channelTitle} channel`}
             />
             <div className={styles.meta}>

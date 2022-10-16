@@ -21,7 +21,7 @@ export default class Video extends Component {
         <div className={styles.itemDetails}>
           <img
             className={styles.channel}
-            src="images/dreamcoding-thumbnail.jpg"
+            src={`${snippet.channels}`}
             alt={`${snippet.channelTitle} channel`}
           />
           <div className={styles.contentDetail}>
