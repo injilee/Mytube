@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { memo, useRef } from 'react';
 import styles from './searchFrom.module.css';
 
-const SearchForm = ({ onSearch }) => {
+const SearchForm = memo(({ onSearch }) => {
   const textInput = useRef();
 
   const handleSearch = () => {
@@ -34,6 +34,6 @@ const SearchForm = ({ onSearch }) => {
       </button>
     </div>
   );
-};
+});
 
 export default SearchForm;

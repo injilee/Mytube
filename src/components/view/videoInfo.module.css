@@ -1,10 +1,24 @@
+.viewDetail_wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 50%;
+}
+
 .player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
   background-color: var(--black-color);
-  margin-bottom: 1em;
-  object-fit: cover;
+  border: none;
 }
 
 .info {
+  margin-top: 0.7em;
   margin-bottom: 1.5em;
 }
 
@@ -59,7 +73,7 @@
 .meta {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2.5em;
+  margin-bottom: 2em;
 }
 
 .channerName {
@@ -90,6 +104,7 @@
 }
 
 .more_btn {
+  margin-top: 1.2em;
 }
 
 .description {

@@ -13,12 +13,10 @@ class Mytube {
       this.requestOptions,
     );
     const result = await response.json();
-    const promises = [];
-    result.items.map((item) => {
-      promises.push(this.LoadVideoId(item.snippet.channelId, item));
-    });
-
-    return Promise.all(promises).then((values) => values);
+    return result.items.map((item) => ({
+      ...item,
+      description: item.snippet.description,
+    }));
   }
 
   async search(query) {
@@ -27,20 +25,28 @@ class Mytube {
       this.requestOptions,
     );
     const result = await response.json();
-    return result.items.map((item) => ({ ...item, id: item.id.videoId }));
+    // return result.items;
+    return result.items.map((item) => ({
+      ...item,
+      id: item.id.videoId,
+    }));
   }
 
-  async LoadVideoId(channelId, item) {
-    const response = await fetch(
-      `https://youtube.googleapis.com/youtube/v3/channels?part=snippet&id=${channelId}&key=${this.key}`,
-      this.requestOptions,
-    );
-    const result = await response.json();
-    item.snippet.channels = result.items[0].snippet.thumbnails.medium.url;
-
-    return new Promise((resolve, reject) => {
-      resolve(item);
-    });
+  async LoadVideoId(item, promises) {
+    for (let i = 0; i < item.length; i++) {
+      promises.push(
+        fetch(
+          `https://youtube.googleapis.com/youtube/v3/channels?part=snippet&id=${item[i].snippet.channelId}&key=${this.key}`,
+          this.requestOptions,
+        )
+          .then((response) => response.json())
+          .then((json) => json['items'][0].snippet.thumbnails.default.url)
+          .then((url) => {
+            item[i].channels = url;
+          }),
+      );
+    }
+    return item;
   }
 }
 

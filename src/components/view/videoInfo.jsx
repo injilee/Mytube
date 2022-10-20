@@ -1,7 +1,12 @@
 import React from 'react';
+import { memo } from 'react';
 import styles from './videoInfo.module.css';
 
-const VideoInfo = ({ videoDetail, videoDetail: { snippet } }) => {
+const VideoInfo = memo(({ videoDetail, videoDetail: { snippet } }) => {
+  const parser = new DOMParser();
+  const title = snippet.title;
+  let finalResult = parser.parseFromString(title, 'text/html');
+
   return (
     <>
       <article className={styles.viewDetail}>
@@ -9,21 +14,24 @@ const VideoInfo = ({ videoDetail, videoDetail: { snippet } }) => {
           <iframe
             className={styles.player}
             width="100%"
-            height="400px"
+            height="100%"
             title="YoutubePlayer"
             src={`https://www.youtube-nocookie.com/embed/${videoDetail.id}?autoplay=1`}
             frameBorder="0"
+            allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
         </div>
         <div className={styles.info}>
-          <h1 className={styles.videoInfo_title}>{snippet.title}</h1>
+          <h1 className={styles.videoInfo_title}>
+            {finalResult.body.textContent}
+          </h1>
           <span className={styles.view_count}>조회수 15만회</span>
           <span className={styles.upload}>
             {snippet.publishedAt.replace('T', ' ').substring(0, 16)}
           </span>
           <span className={styles.videoInfo_hashtag}>
-            {snippet.tags.map((items) => `${items} `)}
+            {snippet.tags ? snippet.tags.map((items) => `${items} `) : ''}
           </span>
           <span className={styles.line}></span>
         </div>
@@ -31,8 +39,8 @@ const VideoInfo = ({ videoDetail, videoDetail: { snippet } }) => {
           <div className={styles.contentDetail}>
             <img
               className={styles.channel}
-              src={`${snippet.channels}`}
-              alt={`${snippet.channelTitle} channel`}
+              src={`${videoDetail.channels}`}
+              alt={`${videoDetail.channelTitle} channel`}
             />
             <div className={styles.meta}>
               <p className={styles.channerName}>{snippet.channelTitle}</p>
@@ -40,12 +48,11 @@ const VideoInfo = ({ videoDetail, videoDetail: { snippet } }) => {
             </div>
           </div>
           <div className={styles.more}>
-            <button className={styles.mormore_btne}>더보기</button>
-            <pre className={styles.description}>{snippet.description}</pre>
+            <span className={styles.description}>
+              {videoDetail.description}
+            </span>
+            <button className={styles.more_btn}>더보기</button>
           </div>
-          {/* <div className={styles.btn}>
-            <button className={styles.subscribe}>구독</button>
-          </div> */}
         </div>
       </article>
       <article>
@@ -53,6 +60,6 @@ const VideoInfo = ({ videoDetail, videoDetail: { snippet } }) => {
       </article>
     </>
   );
-};
+});
 
 export default VideoInfo;

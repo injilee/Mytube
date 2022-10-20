@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Video from '../videos/video';
 import styles from './videoList.module.css';
 
-export default class VideoList extends Component {
+export default class VideoList extends PureComponent {
   render() {
     const { videoItem, onVideoClick } = this.props;
     return (

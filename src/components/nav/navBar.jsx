@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import SearchForm from './searchForm';
 import Profile from './profile';
 import styles from './navBar.module.css';
 
-const NavBar = (props) => {
+const NavBar = memo((props) => {
   const handleHome = () => {
     window.location.reload();
   };
@@ -20,6 +20,6 @@ const NavBar = (props) => {
       <Profile></Profile>
     </nav>
   );
-};
+});
 
 export default NavBar;

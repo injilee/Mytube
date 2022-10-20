@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useCallback } from 'react';
 import styles from './app.module.css';
 import Loading from './components/loading';
 import NavBar from './components/nav/navBar';
@@ -10,23 +11,33 @@ const App = ({ youtube }) => {
   const [video, selectView] = useState(null);
   const [loading, setLoading] = useState(null);
 
-  const selectVideo = (video) => {
-    selectView(video);
-  };
-
-  const search = (query) => {
-    selectVideo(null);
-    setLoading(true);
-    youtube.search(query).then((items) => {
-      getVideos(items);
-      setLoading(false);
-    });
-  };
-
-  // 첫 화면에 보여지는 동영상 목록이기 때문에 mount 되자마자 받아옴.
   useEffect(() => {
-    youtube.mostPopular().then((items) => getVideos(items));
+    youtube.mostPopular().then((items) => {
+      let promises = [];
+      youtube.LoadVideoId(items, promises);
+      Promise.all(promises).then(() => getVideos(items));
+    });
   }, [youtube]);
+
+  const selectVideo = useCallback((video) => {
+    selectView(video);
+  }, []);
+
+  const search = useCallback(
+    (query) => {
+      selectVideo(null);
+      setLoading(true);
+      youtube.search(query).then((items) => {
+        let promises = [];
+        youtube.LoadVideoId(items, promises);
+        Promise.all(promises).then(() => {
+          getVideos(items);
+          setLoading(false);
+        });
+      });
+    },
+    [selectVideo, youtube],
+  );
 
   return (
     <>
