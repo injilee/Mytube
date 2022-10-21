@@ -1,6 +1,7 @@
 /* seachForm */
+/* desktop input */
 
-.searchContainer {
+.desktopSearchContainer {
   display: flex;
   align-items: center;
   background-color: var(--white-color);
@@ -9,36 +10,121 @@
   box-shadow: var(--box-shadow);
 }
 
-.searchInput {
-  width: 17.5em;
+.desktopSearchInput {
+  width: 15.5em;
   height: 2.6em;
   font-size: 1em;
   padding: 0.13em 0.38em;
   background-color: transparent;
 }
 
-.searchBtn {
+.searchBtn,
+.searchBtn2 {
+  display: block;
   font-size: 1.6em;
   color: var(--search-icon-color);
   background-color: transparent;
   margin: 0 0.47em;
 }
 
+.showSearchForm {
+  display: none;
+}
+
+/* mobile input */
+.searchContainer_wrap {
+  display: none;
+}
+
+.exitSearchForm {
+  display: none;
+}
+
+.mobileSearchContainer {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.mobileSearchInput {
+  display: none;
+}
+
+.searchBtn2 {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   /* seachForm */
+  /* desktop input */
 
-  .searchContainer {
+  .desktopSearchContainer {
     background-color: transparent;
     border: none;
     box-shadow: none;
   }
 
-  .searchInput {
+  .desktopSearchInput {
     display: none;
     padding: 0.13em 0.38em;
   }
 
   .searchBtn {
-    margin-right: 0.47em;
+    display: none;
+  }
+
+  /* mobile input */
+  .showSearchForm {
+    display: block;
+    font-size: 1.6em;
+    color: var(--search-icon-color);
+    background-color: transparent;
+    margin: 0 0.47em;
+  }
+
+  .searchContainer_wrap {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4em;
+    z-index: 1;
+    background-color: var(--nav-color);
+  }
+
+  .exitSearchForm {
+    display: block;
+    font-size: 1.2em;
+    color: var(--search-icon-color);
+    background-color: transparent;
+    padding: 0.5em 0.8em;
+  }
+
+  .mobileSearchContainer {
+    display: flex;
+    align-items: center;
+    background-color: var(--white-color);
+    border: 1px solid #eee;
+    border-radius: 0.2em;
+    box-shadow: var(--box-shadow);
+  }
+
+  .mobileSearchInput {
+    display: block;
+    width: 90%;
+    height: 2.6em;
+    font-size: 1em;
+    border: 1px solid #eee;
+    border-radius: 0.2em;
+    box-shadow: var(--box-shadow);
+    padding: 0.13em 0.38em;
+    background-color: var(--white-color);
+  }
+
+  .searchBtn2 {
+    display: block;
   }
 }

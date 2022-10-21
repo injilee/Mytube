@@ -9,6 +9,8 @@ export default class Video extends PureComponent {
       onVideoClick,
     } = this.props;
 
+    const count = videoItem.statistics.viewCount;
+
     const parser = new DOMParser();
     const title = snippet.title;
     let finalResult = parser.parseFromString(title, 'text/html');
@@ -36,8 +38,11 @@ export default class Video extends PureComponent {
             <p className={styles.videoTitle}>{finalResult.body.textContent}</p>
             <span className={styles.channerName}>{snippet.channelTitle}</span>
             <span className={styles.metaData}>
-              조회수 15만회 •{' '}
-              {snippet.publishedAt.replace('T', ' ').substring(0, 16)}
+              조회수{' '}
+              {count
+                ? count >= 10000 && Math.floor(count * 0.0001) + '만회 '
+                : count <= 1000 && Math.floor(count * 0.001) + '천회 '}
+              • {snippet.publishedAt.replace('T', ' ').substring(0, 16)}
             </span>
           </div>
         </div>

@@ -10,14 +10,21 @@ const App = ({ youtube }) => {
   const [videos, getVideos] = useState([]);
   const [video, selectView] = useState(null);
   const [loading, setLoading] = useState(null);
+  const [view, getViewCount] = useState([]);
 
   useEffect(() => {
     youtube.mostPopular().then((items) => {
       let promises = [];
       youtube.LoadVideoId(items, promises);
-      Promise.all(promises).then(() => getVideos(items));
+      Promise.all(promises)
+        .then(() => {
+          const item = items.map((items) => items.statistics.viewCount);
+          getViewCount(item);
+        })
+        .then(() => getVideos(items))
+        .then(() => getVideos(view));
     });
-  }, [youtube]);
+  }, [youtube, view]);
 
   const selectVideo = useCallback((video) => {
     selectView(video);
