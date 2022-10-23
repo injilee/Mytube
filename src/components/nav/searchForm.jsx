@@ -26,11 +26,13 @@ const SearchForm = memo(({ onSearch }) => {
 
   const onClick = () => {
     handleSearch();
+    console.log('🦆');
   };
 
   const onKeyPress = (event) => {
     if (event.key === 'Enter') {
       handleSearch();
+      console.log('🍳');
     }
   };
 
@@ -67,7 +69,7 @@ const SearchForm = memo(({ onSearch }) => {
             onKeyPress={onKeyPress}
             ref={textInput}
           />
-          <button type="button" className={styles.searchBtn2} onClick={onClick}>
+          <button type="submit" className={styles.searchBtn2} onClick={onClick}>
             <i className="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>

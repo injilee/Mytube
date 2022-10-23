@@ -68,9 +68,12 @@
 
 /* Mediaquery */
 @media screen and (max-width: 768px) {
-  /* profile */
+  .switch {
+    margin: 0 0.4em;
+  }
+
   .alram {
-    margin-left: 0.94em;
+    margin-left: 0.4em;
   }
 
   .profile_name {

@@ -3,7 +3,7 @@ import { memo } from 'react';
 import styles from './videoInfo.module.css';
 
 const VideoInfo = memo(({ videoDetail, videoDetail: { snippet } }) => {
-  const count = videoDetail.statistics.viewCount;
+  const count = videoDetail.statistics['viewCount'];
   const subscriberCount = videoDetail.subscriberCount;
 
   const parser = new DOMParser();
@@ -52,14 +52,14 @@ const VideoInfo = memo(({ videoDetail, videoDetail: { snippet } }) => {
             />
             <div className={styles.meta}>
               <p className={styles.channerName}>{snippet.channelTitle}</p>
-              {/* <span className={styles.owner}>
+              <span className={styles.owner}>
                 구독자{' '}
                 {subscriberCount
                   ? subscriberCount >= 10000 &&
                     Math.floor(subscriberCount * 0.0001) + '만명 '
                   : subscriberCount <= 1000 &&
                     Math.floor(subscriberCount * 0.001) + '천명 '}
-              </span> */}
+              </span>
             </div>
           </div>
           <div className={styles.more}>
