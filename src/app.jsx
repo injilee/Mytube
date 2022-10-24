@@ -12,11 +12,13 @@ const App = ({ youtube }) => {
   const [loading, setLoading] = useState(null);
 
   useEffect(() => {
+    setLoading(true);
     youtube.mostPopular().then((items) => {
       let promises = [];
       youtube.LoadVideoId(items, promises);
       Promise.all(promises).then(() => getVideos(items));
     });
+    setLoading(false);
   }, [youtube]);
 
   const selectVideo = useCallback((video) => {

@@ -3,14 +3,17 @@ import styles from './searchFrom.module.css';
 
 const SearchForm = memo(({ onSearch }) => {
   const textInput = useRef();
+  const mobileTextInput = useRef();
+
   const searchForm = useRef();
   const moblieSearchBtn = useRef();
   const exitBtn = useRef();
 
   const handleSearch = () => {
-    const value = textInput.current.value;
+    const value = textInput.current.value || mobileTextInput.current.value;
     onSearch(value);
     textInput.current.value = '';
+    mobileTextInput.current.value = '';
   };
 
   const onInputBox = () => {
@@ -67,7 +70,7 @@ const SearchForm = memo(({ onSearch }) => {
             placeholder="Search"
             className={styles.mobileSearchInput}
             onKeyPress={onKeyPress}
-            ref={textInput}
+            ref={mobileTextInput}
           />
           <button type="submit" className={styles.searchBtn2} onClick={onClick}>
             <i className="fa-solid fa-magnifying-glass"></i>

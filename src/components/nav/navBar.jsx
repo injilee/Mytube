@@ -11,7 +11,12 @@ const NavBar = memo((props) => {
   return (
     <nav className={styles.navBar}>
       <div className={styles.logoContainer}>
-        <img className={styles.logo} src="images/logo.png" alt="logo" />
+        <img
+          onClick={handleHome}
+          className={styles.logo}
+          src="images/logo.png"
+          alt="logo"
+        />
         <h1 onClick={handleHome} className={styles.title}>
           Mytube
         </h1>

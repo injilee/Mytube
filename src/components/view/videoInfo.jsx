@@ -3,7 +3,7 @@ import { memo } from 'react';
 import styles from './videoInfo.module.css';
 
 const VideoInfo = memo(({ videoDetail, videoDetail: { snippet } }) => {
-  const count = videoDetail.statistics['viewCount'];
+  const count = videoDetail.viewCount;
   const subscriberCount = videoDetail.subscriberCount;
 
   const parser = new DOMParser();
@@ -30,10 +30,13 @@ const VideoInfo = memo(({ videoDetail, videoDetail: { snippet } }) => {
             {finalResult.body.textContent}
           </h1>
           <span className={styles.view_count}>
-            조회수{' '}
-            {count
-              ? count >= 10000 && Math.floor(count * 0.0001) + '만회 '
-              : count <= 1000 && Math.floor(count * 0.001) + '천회 '}
+            {count === null
+              ? ''
+              : count !== null
+              ? count >= 10000 &&
+                '조회수 ' + Math.floor(count * 0.0001) + '만회 • '
+              : count <= 1000 &&
+                '조회수 ' + Math.floor(count * 0.001) + '천회 • '}
           </span>
           <span className={styles.upload}>
             {snippet.publishedAt.replace('T', ' ').substring(0, 16)}
@@ -64,7 +67,7 @@ const VideoInfo = memo(({ videoDetail, videoDetail: { snippet } }) => {
           </div>
           <div className={styles.more}>
             <span className={styles.description}>
-              {videoDetail.description}
+              {videoDetail.snippet.description}
             </span>
             <button className={styles.more_btn}>더보기</button>
           </div>

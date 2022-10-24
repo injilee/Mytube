@@ -38,13 +38,13 @@ export default class Video extends PureComponent {
             <p className={styles.videoTitle}>{finalResult.body.textContent}</p>
             <span className={styles.channerName}>{snippet.channelTitle}</span>
             <span className={styles.metaData}>
-              {count === 0
+              {count === null
                 ? ''
-                : count !== 0
+                : count !== null
                 ? count >= 10000 &&
-                  '조회수 ' + Math.floor(count * 0.0001) + '만회 •'
+                  '조회수 ' + Math.floor(count * 0.0001) + '만회 • '
                 : count <= 1000 &&
-                  '조회수 ' + Math.floor(count * 0.001) + '천회 •'}
+                  '조회수 ' + Math.floor(count * 0.001) + '천회 • '}
               {snippet.publishedAt.replace('T', ' ').substring(0, 16)}
             </span>
           </div>

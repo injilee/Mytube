@@ -37,14 +37,7 @@
 
 .view_count {
   font-size: 0.8rem;
-  margin-right: 0.4em;
   color: var(--text-secondary-color);
-}
-
-.view_count::after {
-  display: inline;
-  content: '•';
-  margin-left: 0.4em;
 }
 
 .upload {
