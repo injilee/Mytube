@@ -29,13 +29,11 @@ const SearchForm = memo(({ onSearch }) => {
 
   const onClick = () => {
     handleSearch();
-    console.log('🦆');
   };
 
   const onKeyPress = (event) => {
     if (event.key === 'Enter') {
       handleSearch();
-      console.log('🍳');
     }
   };
 
