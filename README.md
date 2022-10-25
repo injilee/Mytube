@@ -50,4 +50,4 @@ https://injilee-mytube.netlify.app/
 
 ## Tech Blog
 
-[Mytube :: What I Learned](<[https](https://blog.naver.com/lij8016/222910631551)>)
+[Mytube :: What I Learned](https://blog.naver.com/lij8016/222910631551)
