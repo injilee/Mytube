@@ -1,42 +1,53 @@
-# YouTube Clone
+# Mytube
 
-React Create App을 이용한 YouTube Clone Project 입니다.</br>
+React Create App을 이용한 YouTube Clone 프로젝트 입니다.
 
-<details open="open">
-  <summary>목차</summary>
-  <ol>
-    <li><a href="#project">Project</a></li>
-    <li><a href="#preview">Preview</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#implement">Implement</a></li>
-    <li><a href="#reference">Reference</a></li>
-    <li><a href="#problem-solving-process">Problem Solving Process</a></li>
-  </ol>
-</details>
+## 1. 컴포넌트 설계
+
+## 2. 구현기능
+
+- [x] 다크모드 지원
+- [x] 반응형 디자인
+- [x] 검색 기능
+- [x] 인기 동영상 및 관련 동영상 목록
+- [x] 유튜브 API
+- [x] .env 파일로 API Key 암호화
+- [ ] 연관검색어 자동 완성 (2022.11 구현 예정)
+- [ ] Google OAuth2.0 인증 방식 (2022.11 구현 예정)
+
+## 3. 문제
+
+## 4. Preview
+
+- Desktop 🖥  
+  </br><img src="https://user-images.githubusercontent.com/90603357/197764714-f6148800-bc55-49f9-b66f-b12e107c8641.png" alt="desktop screenshot" style="width:100%;"/>
+
 </br>
+
+- Mobile 📱  
+  </br><img src="https://user-images.githubusercontent.com/90603357/197793602-62e02f4e-203b-4b55-a1b4-599c1a9994d4.png" alt="mobile screenshot" style="width:30%;"/>
+
 ---
 
+## 5. Demo Link
+
+https://injilee-mytube.netlify.app/
+
 </br>
 
-## Project
+## Tech Stack
 
-드림코딩 React basic youtube clone coding</br>
+- [x] HTML
+- [x] css
+- [x] JavaScript
+- [x] React
+- [x] postCSS
+- [x] Postman
 
-## Preview
+## Reference
 
-## Skills
+[Dream Coding](https://academy.dream-coding.com/)
 
-- React
-- JavaScript
-- HTML / CSS
-- Postman
-- Youtube API
+## Tech Blog
 
-## 구현 기능
-
-- [x] 다크모드 지원.
-- [ ] 검색 기능
-- [ ] 인기 동영상 및 관련 동영상 목록
-- [ ] 유튜브 API
-- [x] 반응형 디자인
-- [x] .env 파일로 API Key 암호화
+[Mytube :: What I Learned](<[https](https://blog.naver.com/lij8016/222910631551)>)
