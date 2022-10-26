@@ -176,9 +176,4 @@ https://injilee-mytube.netlify.app/
 
 ## Tech Blog
 
-[Mytube :: What I Learned](https://blog.naver.com/lij8016/222910631551)
-
-<pre><code>- API Key 값을 암호화하기 위해 dotenv를 사용.
-- Promise.all을 이용해 fetch로 받아온 데이터들을 병렬적으로 처리
-- dependency (의존성 주입)으로 유닛테스트 효율성과 코드 재사용성을 높일 수 있다.
-</code></pre>
+[Mytube :: What I Learned](<[https](https://blog.naver.com/lij8016/222910631551)>)
