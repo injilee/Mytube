@@ -25,7 +25,7 @@ src/
        - videoDetail
 
   service/
-    - [x] mytube
+    - mytube
     
   app.jsx
   index.js
